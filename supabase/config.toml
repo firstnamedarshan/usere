@@ -1,0 +1,16 @@
+project_id = "reusable-network"
+
+[auth]
+site_url = "http://localhost:5173"
+additional_redirect_urls = ["http://localhost:5173/**", "http://localhost:4174/**"]
+enable_signup = true
+
+[auth.email]
+enable_signup = false
+
+[auth.web3.solana]
+enabled = true
+
+[functions.marketplace]
+# Auth is checked via auth.getUser(token) in the function. Supports current signing keys.
+verify_jwt = false

@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="One agent solves something. Other agents can reuse that work. Discover reusable AI-agent skills and workflows on Reusable Network."
+    />
+    <title>Reusable Network — Good work. Ready to be reused.</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      // Hide homepage markup on other routes until their lightweight page loads.
+      document.documentElement.dataset.page = location.pathname === "/" ? "home" : "inner";
+    </script>
+  </head>
+  <body data-hero-mode="sell">
+    <svg
+      class="icon-library"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M5 12h14m-5-5 5 5-5 5" />
+      </symbol>
+      <symbol id="icon-wallet" viewBox="0 0 24 24">
+        <rect x="3.5" y="6" width="17" height="13" rx="3" />
+        <path d="M5 6V4.5h12M16 11h5v4h-5a2 2 0 0 1 0-4Z" />
+      </symbol>
+      <symbol id="icon-api" viewBox="0 0 24 24">
+        <path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-14-2 16" />
+      </symbol>
+      <symbol id="icon-csv" viewBox="0 0 24 24">
+        <rect x="4" y="3" width="16" height="18" rx="3" />
+        <path d="M4 9h16M10 9v12m4-6 2 2 4-4" />
+      </symbol>
+    </svg>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="#" aria-label="Reusable Network home">
+          <svg class="brand-mark" viewBox="0 0 38 38" aria-hidden="true">
+            <rect x="3" y="3" width="22" height="22" rx="7" />
+            <rect x="13" y="13" width="22" height="22" rx="7" />
+            <path d="M13 24V14h11" />
+          </svg>
+          <span>Reusable<span class="brand-second"> Network</span></span>
+        </a>
+        <nav aria-label="Main navigation">
+          <a href="/marketplace">Explore skills</a>
+          <a href="#how-it-works">How it works</a>
+        </nav>
+        <button class="wallet-button" id="connect-wallet" type="button">
+          <span class="wallet-dot" aria-hidden="true"></span>Connect wallet
+        </button>
+      </header>
+
+      <main id="main">
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">
+              <span aria-hidden="true"></span>A better starting point
+            </p>
+            <h1 id="hero-title">
+              <span class="hero-headline" data-mode-copy="sell">
+                <span class="headline-first">Sell what your</span>
+                <span class="headline-second">agent <span>learned.</span></span>
+              </span>
+              <span class="hero-headline" data-mode-copy="buy" aria-hidden="true">
+                <span class="headline-first">Buy what other</span>
+                <span class="headline-second">agents <span>learned.</span></span>
+              </span>
+            </h1>
+            <p class="hero-description">
+              <span data-mode-copy="sell">Turn useful workflows into reusable skills. Get paid in SOL when they sell.</span>
+              <span data-mode-copy="buy" aria-hidden="true">Find a skill for your next task. Give your agent a head start.</span>
+            </p>
+            <div class="hero-actions">
+              <a class="primary-button" id="hero-action" href="/submit">
+                <span id="hero-action-label">Sell</span>
+                <svg aria-hidden="true"><use href="#icon-arrow" /></svg>
+              </a>
+              <fieldset class="hero-mode-control">
+                <legend class="sr-only">Choose Sell or Buy mode</legend>
+                <span class="mode-toggle">
+                  <input class="sr-only mode-radio" id="hero-mode-sell" type="radio" name="hero-mode" value="sell" checked />
+                  <label class="mode-label" for="hero-mode-sell">Sell</label>
+                  <input class="sr-only mode-radio" id="hero-mode-buy" type="radio" name="hero-mode" value="buy" />
+                  <label class="mode-label" for="hero-mode-buy">Buy</label>
+                  <span class="toggle-thumb" aria-hidden="true"></span>
+                </span>
+              </fieldset>
+            </div>
+            <p class="hero-note">
+              <span class="little-squares" aria-hidden="true"
+                ><i></i><i></i><i></i></span
+              >One agent’s good work. A head start for the next.
+            </p>
+          </div>
+
+          <div class="scene-section">
+            <div class="hero-scene-anchor">
+            <div
+              id="scene-container"
+              class="scene-container"
+              role="img"
+              aria-label="Your agent packages a skill and sends copies to Agent A and Agent B, keeping the original."
+            >
+              <div
+                id="scene-fallback"
+                class="scene-fallback"
+                aria-hidden="true"
+              >
+                <div class="fallback-station fallback-creator">
+                  <div class="fallback-agent"><span></span><span></span></div>
+                  <div class="fallback-platform">
+                    <i class="fallback-piece"
+                      ><svg><use href="#icon-wallet" /></svg></i
+                    ><i class="fallback-piece small-piece"></i>
+                  </div>
+                  <b>Your agent</b>
+                </div>
+                <div class="fallback-station fallback-a">
+                  <div class="fallback-agent"><span></span><span></span></div>
+                  <div class="fallback-platform">
+                    <i class="fallback-piece"
+                      ><svg><use href="#icon-wallet" /></svg></i
+                    ><i class="fallback-piece small-piece"></i>
+                  </div>
+                  <b>Agent A</b>
+                </div>
+                <div class="fallback-station fallback-b">
+                  <div class="fallback-agent"><span></span><span></span></div>
+                  <div class="fallback-platform">
+                    <i class="fallback-piece"
+                      ><svg><use href="#icon-wallet" /></svg></i
+                    ><i class="fallback-piece small-piece"></i>
+                  </div>
+                  <b>Agent B</b>
+                </div>
+              </div>
+              <div class="agent-label" data-agent="creator">
+                <span class="label-dot lavender"></span><span class="agent-name">Your agent</span>
+              </div>
+              <div class="agent-label" data-agent="a">
+                <span class="label-dot blue"></span><span class="agent-name">Agent A</span>
+              </div>
+              <div class="agent-label" data-agent="b">
+                <span class="label-dot peach"></span><span class="agent-name">Agent B</span>
+              </div>
+            </div>
+            </div>
+            <div class="scene-caption">
+              <span class="caption-indicator" aria-hidden="true"></span>
+              <p id="scene-caption">Package your work. Let other agents reuse it.</p>
+              <span class="demo-label">Illustrative demo</span>
+            </div>
+            <p class="sr-only" id="scene-explanation">
+              Your agent packages a skill. Copies travel outward to the other agents while your agent keeps the original.
+            </p>
+            <span
+              class="sr-only"
+              id="state-announcement"
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            ></span>
+          </div>
+          <div class="hero-bottom">
+            <span>Made once. Useful again.</span
+            ><a href="#scroll-story" class="scroll-cue"
+              >Scroll to see how it works
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 4v16m-5-5 5 5 5-5" /></svg
+            ></a>
+          </div>
+        </section>
+
+        <section
+          id="scroll-story"
+          class="scroll-story"
+          data-chapter="0"
+          aria-label="How one agent’s good work becomes a reusable skill"
+        >
+          <div class="story-stage">
+            <div id="story-canvas-slot" class="story-canvas-slot"></div>
+
+            <div class="story-copy">
+              <article class="story-chapter" data-chapter="0">
+                <p class="story-kicker"><span>01</span> Repeated effort</p>
+                <h2>Same task. <br />Separate effort.</h2>
+                <p class="story-description">
+                  Three agents, the same problem. Each begins by putting the
+                  pieces together on its own.
+                </p>
+                <div class="story-static-illustration static-repeat" aria-hidden="true">
+                  <div class="static-station"><span class="static-agent"><i></i><i></i></span><span class="static-work"><i></i><i></i><i></i></span><b>Creator</b></div>
+                  <div class="static-station"><span class="static-agent"><i></i><i></i></span><span class="static-work"><i></i><i></i><i></i></span><b>Agent A</b></div>
+                  <div class="static-station"><span class="static-agent"><i></i><i></i></span><span class="static-work"><i></i><i></i><i></i></span><b>Agent B</b></div>
+                </div>
+              </article>
+              <article class="story-chapter" data-chapter="1" hidden>
+                <p class="story-kicker"><span>02</span> Package the solution</p>
+                <h2>Turn what worked <br />into a skill.</h2>
+                <p class="story-description">
+                  Clear instructions. A useful script. Example inputs.
+                  Everything that made the solution work, in one package.
+                </p>
+                <div class="story-static-illustration static-assembly" aria-hidden="true">
+                  <span class="static-layer layer-blue">Instructions</span>
+                  <span class="static-layer layer-lavender">Script</span>
+                  <span class="static-layer layer-peach">Example inputs</span>
+                  <span class="static-joined"><svg><use href="#icon-wallet" /></svg></span>
+                </div>
+              </article>
+              <article class="story-chapter" data-chapter="2" hidden>
+                <p class="story-kicker"><span>03</span> Reuse the work</p>
+                <h2>One solution. <br />New starting points.</h2>
+                <p class="story-description">
+                  The creator keeps the original. Two matching copies give
+                  the next agents a head start.
+                </p>
+                <p class="story-footnote">Sharing instructions and files, so other agents can build on them.</p>
+                <div class="story-static-illustration static-transfer" aria-hidden="true">
+                  <span class="static-transfer-tile"><svg><use href="#icon-wallet" /></svg><b>Creator</b></span>
+                  <span class="static-transfer-tile"><svg><use href="#icon-wallet" /></svg><b>Agent A</b></span>
+                  <span class="static-transfer-tile"><svg><use href="#icon-wallet" /></svg><b>Agent B</b></span>
+                </div>
+              </article>
+              <article class="story-chapter" data-chapter="3" hidden>
+                <p class="story-kicker"><span>04</span> Make it yours</p>
+                <h2>Find your agent’s <br />next skill.</h2>
+                <p class="story-description">
+                  A better starting point could be one package away.
+                  Explore what’s inside, then imagine what comes next.
+                </p>
+                <div class="story-static-illustration static-market" aria-hidden="true">
+                  <span class="lavender-art"><svg><use href="#icon-wallet" /></svg></span>
+                  <span class="blue-art"><svg><use href="#icon-api" /></svg></span>
+                  <span class="peach-art"><svg><use href="#icon-csv" /></svg></span>
+                </div>
+              </article>
+            </div>
+
+            <div id="story-layer-labels" class="story-layer-labels" aria-hidden="true" hidden>
+              <span data-layer="instructions"><i class="blue"></i>Instructions</span>
+              <span data-layer="script"><i class="lavender"></i>Script</span>
+              <span data-layer="examples"><i class="peach"></i>Example inputs</span>
+            </div>
+
+            <div id="story-skill-controls" class="story-skill-controls" hidden>
+              <button data-skill="wallet" type="button">Wallet history to CSV <span aria-hidden="true">↗</span></button>
+              <button data-skill="api" type="button">API pagination helper <span aria-hidden="true">↗</span></button>
+              <button data-skill="csv" type="button">CSV cleanup workflow <span aria-hidden="true">↗</span></button>
+            </div>
+
+            <div class="story-bottom">
+              <p class="story-demo-label"><span aria-hidden="true"></span>Illustrative demonstration</p>
+              <nav id="story-progress" class="story-progress" aria-label="Story chapters">
+                <span class="story-progress-track" aria-hidden="true"><i id="story-progress-fill"></i></span>
+                <button type="button" data-story-jump="0" aria-label="Chapter 1: Repeated effort" aria-current="step"><span>01</span>Effort</button>
+                <button type="button" data-story-jump="1" aria-label="Chapter 2: Package the solution"><span>02</span>Package</button>
+                <button type="button" data-story-jump="2" aria-label="Chapter 3: Reuse the work"><span>03</span>Reuse</button>
+                <button type="button" data-story-jump="3" aria-label="Chapter 4: Explore the skills"><span>04</span>Explore</button>
+              </nav>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="skills-section"
+          id="skills"
+          aria-labelledby="skills-heading"
+        >
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow plain">Small packages. Real possibilities.</p>
+              <h2 id="skills-heading">A little less from scratch.</h2>
+            </div>
+            <span class="section-aside"
+              >A few things your agent could reuse.</span
+            >
+          </div>
+          <div class="skill-list">
+            <button class="skill-card" data-skill="wallet" type="button">
+              <span class="skill-art lavender-art"
+                ><svg aria-hidden="true"><use href="#icon-wallet" /></svg></span
+              ><span class="skill-card-copy"
+                ><span class="skill-category">Data export</span
+                ><span class="skill-title">Wallet history to CSV</span
+                ><span class="skill-summary"
+                  >From transfer records to a tidy spreadsheet.</span
+                ><span class="skill-meta"
+                  >Example package <span aria-hidden="true">·</span> View
+                  details</span
+                ></span
+              ><svg class="card-arrow" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </button>
+            <button class="skill-card" data-skill="api" type="button">
+              <span class="skill-art blue-art"
+                ><svg aria-hidden="true"><use href="#icon-api" /></svg></span
+              ><span class="skill-card-copy"
+                ><span class="skill-category">Developer tools</span
+                ><span class="skill-title">API pagination helper</span
+                ><span class="skill-summary"
+                  >Every page, collected into one dataset.</span
+                ><span class="skill-meta"
+                  >Example package <span aria-hidden="true">·</span> View
+                  details</span
+                ></span
+              ><svg class="card-arrow" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </button>
+            <button class="skill-card" data-skill="csv" type="button">
+              <span class="skill-art peach-art"
+                ><svg aria-hidden="true"><use href="#icon-csv" /></svg></span
+              ><span class="skill-card-copy"
+                ><span class="skill-category">Data workflows</span
+                ><span class="skill-title">CSV cleanup workflow</span
+                ><span class="skill-summary"
+                  >Consistent columns. Duplicates accounted for.</span
+                ><span class="skill-meta"
+                  >Example package <span aria-hidden="true">·</span> View
+                  details</span
+                ></span
+              ><svg class="card-arrow" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+            </button>
+          </div>
+          <p class="examples-note">
+            Illustrative packages to explore the idea. Purchases aren’t enabled
+            in this prototype.
+          </p>
+        </section>
+
+        <section
+          class="how-section"
+          id="how-it-works"
+          aria-labelledby="how-heading"
+        >
+          <div class="how-intro">
+            <p class="eyebrow plain">Good work travels.</p>
+            <h2 id="how-heading">
+              Solve it once.<br />Give it a next chapter.
+            </h2>
+            <p>
+              A skill packages instructions, scripts and examples so another
+              agent can build on what already works.
+            </p>
+          </div>
+          <ol class="steps">
+            <li>
+              <span class="step-number">01</span>
+              <div>
+                <h3>Package</h3>
+                <p>
+                  Turn a useful solution into clear instructions, scripts and
+                  examples.
+                </p>
+              </div>
+              <span class="step-arrow" aria-hidden="true">↗</span>
+            </li>
+            <li>
+              <span class="step-number">02</span>
+              <div>
+                <h3>Review</h3>
+                <p>
+                  See what it needs, what it produces and whether it fits your
+                  task.
+                </p>
+              </div>
+              <span class="step-arrow" aria-hidden="true">↗</span>
+            </li>
+            <li>
+              <span class="step-number">03</span>
+              <div>
+                <h3>Reuse</h3>
+                <p>
+                  Give your agent a starting point. The creator earns SOL when
+                  you buy their package.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <a class="brand footer-brand" href="#"
+          ><svg class="brand-mark" viewBox="0 0 38 38" aria-hidden="true">
+            <rect x="3" y="3" width="22" height="22" rx="7" />
+            <rect x="13" y="13" width="22" height="22" rx="7" />
+            <path d="M13 24V14h11" /></svg
+          ><span>Reusable Network</span></a
+        >
+        <p>One solution. New starting points.</p>
+        <span class="prototype-tag">Devnet demo · Test SOL only</span>
+      </footer>
+    </div>
+
+    <dialog
+      id="details-dialog"
+      class="details-dialog"
+      aria-labelledby="dialog-title"
+      aria-describedby="dialog-description"
+    >
+      <button
+        id="dialog-close"
+        class="dialog-close"
+        type="button"
+        aria-label="Close details"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m6 6 12 12M18 6 6 18" />
+        </svg>
+      </button>
+      <div id="dialog-art" class="dialog-art">
+        <svg aria-hidden="true">
+          <use id="dialog-icon" href="#icon-wallet" />
+        </svg>
+      </div>
+      <p id="dialog-category" class="eyebrow plain"></p>
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-description" class="dialog-description"></p>
+      <div id="dialog-fields" class="dialog-fields">
+        <div>
+          <h3>Input</h3>
+          <p id="dialog-input"></p>
+        </div>
+        <div>
+          <h3>Output</h3>
+          <p id="dialog-output"></p>
+        </div>
+      </div>
+      <p id="dialog-notice" class="dialog-notice">
+        Example package — not available for purchase in this prototype.
+      </p>
+    </dialog>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

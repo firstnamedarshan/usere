@@ -1,0 +1,16 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+handoff/
+# Generated browser captures, dashboard screenshots, and temporary recordings.
+screenshots/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+supabase/.env.*
+!supabase/.env.example
+.wrangler/
+supabase/.temp/
