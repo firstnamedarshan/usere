@@ -53,12 +53,12 @@ Current gate: finish milestone 2 live wallet login/admin setup, then milestone 3
 - npm run test:unit; npm test (isolated port 5175); npm run test:integration (synthetic session/API on 5176); node tests/live-supabase-smoke.mjs; npm run deploy:check.
 - Backend: supabase/functions/marketplace/index.ts and handler.js; shared validation/payment JS beside it. SQL: supabase/migrations/20261007191453_marketplace.sql.
 - Env names only: frontend VITE_SUPABASE_URL, VITE_SUPABASE_PUBLISHABLE_KEY, optional VITE_SOLANA_DEVNET_RPC_URL; function ADMIN_WALLET_ADDRESS, ALLOWED_ORIGINS, optional SOLANA_DEVNET_RPC_URL. Hosted function receives SUPABASE_URL/SUPABASE_SERVICE_ROLE_KEY automatically. Never put server secrets in VITE_ vars.
-- All repository files were untracked at task start. Preserve existing work; no commits made.
+- All repository files were untracked at task start. Initial reviewed source snapshot is now committed locally; preserve existing work.
 
 ## GitHub handoff
 
-- User requested a GitHub push on 8 October. Existing local repository has no commits or remote; branch is master. Repository destination and GitHub connection are pending user input.
-- Preparing an initial commit of source, tests, migrations, examples, and documentation. .gitignore excludes local environment files, dependencies, builds, test artifacts, and the entire generated screenshots directory. Files remain available locally.
+- User requested a GitHub push on 8 October. Initial commit **6d49385** created on the existing master branch: 64 source/test/migration/example/documentation files. No remote is configured yet. Repository destination and GitHub connection are pending user input; a new private reusable-network repository was offered as the default choice.
+- .gitignore excludes local environment files, dependencies, builds, test artifacts, and the entire generated screenshots directory. Files remain available locally. Staged secret-format review found only synthetic test fixtures; git diff --cached --check passed after two whitespace-only test-file cleanups. Unrelated project details and the live Auth user identifier were removed from this document before committing. No runtime code change or new test run was needed for this push preparation.
 - GitHub publication does not deploy the website or complete the outstanding live marketplace/agent-drafting milestones. Record the actual remote and commit result after a successful push.
 
 ## Next concrete tasks
