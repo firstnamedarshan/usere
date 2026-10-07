@@ -57,9 +57,12 @@ Current gate: finish milestone 2 live wallet login/admin setup, then milestone 3
 
 ## GitHub handoff
 
-- User requested a GitHub push on 8 October. Initial commit **6d49385** created on the existing master branch: 64 source/test/migration/example/documentation files. No remote is configured yet. Repository destination and GitHub connection are pending user input; a new private reusable-network repository was offered as the default choice.
+- User requested a GitHub push on 8 October. Initial commit **6d49385** created on the existing master branch: 64 source/test/migration/example/documentation files. User subsequently selected the public repository **firstnamedarshan/usere** and explicitly authorized pushing all project code there.
 - .gitignore excludes local environment files, dependencies, builds, test artifacts, and the entire generated screenshots directory. Files remain available locally. Staged secret-format review found only synthetic test fixtures; git diff --cached --check passed after two whitespace-only test-file cleanups. Unrelated project details and the live Auth user identifier were removed from this document before committing. No runtime code change or new test run was needed for this push preparation.
 - GitHub publication does not deploy the website or complete the outstanding live marketplace/agent-drafting milestones. Record the actual remote and commit result after a successful push.
+- GitHub connector authenticates as `firstnamedarshan`. Initial repository listings were empty, but direct access to the supplied repository succeeded and confirmed public visibility and push permission. Branch lookup and native git ls-remote both confirmed the destination is empty. Source publication is being prepared for remote main; final push result will be recorded after verification.
+- Tracked-file credential review found only the literal private-key header used by a rejection test, with no key material. Only placeholder .env.example files are tracked; both local environment files, screenshots, dependencies and builds are ignored. No local environment files appear in commit history.
+- Local production build passed again during GitHub inspection. The first sandboxed run failed with Windows `EPERM` resolving styles.css; the same build passed outside the restricted sandbox. Existing Three.js chunk-size advisory remains. This verifies the local build only; no live wallet/payment checks were repeated.
 
 ## Next concrete tasks
 
